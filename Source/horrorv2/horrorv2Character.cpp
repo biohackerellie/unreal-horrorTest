@@ -1,4 +1,3 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "horrorv2Character.h"
 #include "horrorv2Projectile.h"
@@ -24,11 +23,12 @@ Ahorrorv2Character::Ahorrorv2Character()
 
 	PrimaryActorTick.bCanEverTick = true;
 	
-	// Character doesnt have a rifle at start
-	bHasRifle = false;
-	
+
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
+
+
+	
 		
 	// Create a CameraComponent
 	SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
@@ -235,12 +235,3 @@ void Ahorrorv2Character::OutOfStamina()
 
 }
 
-void Ahorrorv2Character::SetHasRifle(bool bNewHasRifle)
-{
-	bHasRifle = bNewHasRifle;
-}
-
-bool Ahorrorv2Character::GetHasRifle()
-{
-	return bHasRifle;
-}
