@@ -57,13 +57,16 @@ Ahorrorv2Character::Ahorrorv2Character()
 	FootstepDelay = WalkingFootstepDelay;
 	Pickups = 0;
 
+	MaxHealth = 100;
+	
+
 }
 
 void Ahorrorv2Character::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
-
+	Health = MaxHealth;
 	// Add Input Mapping Context
 	if (APlayerController* PlayerController = Cast<APlayerController>(Controller))
 	{
@@ -181,6 +184,8 @@ void Ahorrorv2Character::EndSprint()
 	FootstepDelay = WalkingFootstepDelay;
 	
 }
+
+
 
 
 void Ahorrorv2Character::SetFootstepDelay()

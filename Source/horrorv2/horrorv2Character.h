@@ -64,7 +64,15 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* LookAction;
 
-
+	/** Health */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Health)
+	float MaxHealth;
+	
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Health)
+	float Health;
+	
+	/** Pickups */
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Pickups)
 	int Pickups;
@@ -91,6 +99,8 @@ protected:
 	float SprintSpeed;
 
 	bool bIsRunning;
+
+
 
 
 	//* footsteps */
