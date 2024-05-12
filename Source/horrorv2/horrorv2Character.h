@@ -48,6 +48,7 @@ class Ahorrorv2Character : public ACharacter
 	/** Sprint Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	UInputAction* SprintAction;
+	
 
 	
 public:
@@ -65,7 +66,7 @@ public:
 
 
 
-	UPROPERTY(EditAnywhere, Blueprintable, Category = Pickups)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Pickups)
 	int Pickups;
 
 
@@ -80,6 +81,7 @@ protected:
 	/** Called for sprinting input */
 	void Sprint(const FInputActionValue& Value);
 	void EndSprint();
+
 
 	/** Movement speed for walking and sprinting */
 	UPROPERTY(EditAnywhere,  Category = Sprint)
@@ -124,6 +126,9 @@ protected:
 
 	float CurrentRefillDelayTime;
 	bool bHasStamina;
+
+
+	
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;

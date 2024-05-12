@@ -9,7 +9,7 @@
 AObjectiveBase::AObjectiveBase()
 {
 	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh"));
-	RootComponent = StaticMesh;
+	
 
 	Collision = CreateDefaultSubobject<UBoxComponent>(TEXT("Collision"));
 	Collision->SetupAttachment(StaticMesh);

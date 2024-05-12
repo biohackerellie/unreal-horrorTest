@@ -8,6 +8,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
+#include "Blueprint/UserWidget.h"
 #include "Engine/LocalPlayer.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -54,7 +55,7 @@ Ahorrorv2Character::Ahorrorv2Character()
 	WalkingFootstepDelay = .5f;
 	RunningFootstepDelay = .3f;
 	FootstepDelay = WalkingFootstepDelay;
-	
+	Pickups = 0;
 
 }
 
@@ -99,6 +100,8 @@ void Ahorrorv2Character::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 		EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Completed, this, &Ahorrorv2Character::EndSprint);
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &Ahorrorv2Character::Look);
+
+
 	}
 	else
 	{
@@ -178,6 +181,7 @@ void Ahorrorv2Character::EndSprint()
 	FootstepDelay = WalkingFootstepDelay;
 	
 }
+
 
 void Ahorrorv2Character::SetFootstepDelay()
 {
